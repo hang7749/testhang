@@ -4,10 +4,8 @@ const morgan = require('morgan');
 const bodyparser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require('path');
-const favicon = require('serve-favicon');
 
 const connectDB = require('./server/database/connection');
-mongoose.connect("mongodb+srv://Hang:hang@hang.qr6gp.mongodb.net/?retryWrites=true&w=majority")
 
 const app = express();
 
@@ -31,12 +29,6 @@ app.set("view engine", "ejs")
 app.use('/css', express.static(path.resolve(__dirname, "assets/css")))
 app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
-
-
-//D:\Programming\nodeJs\CRUD_Application_Node-master\assets\favicon.ico
-// Returns a middleware to serve favicon
-//app.use(favicon(path.join(__dirname, 'favicon.ico')));
-//app.use('/favicon.ico', express.static('public/favicon.ico'));
 
 app.use("/public", express.static('public')); 
 
