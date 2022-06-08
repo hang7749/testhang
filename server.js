@@ -17,6 +17,7 @@ app.use(morgan('tiny'));
 
 // mongodb connection
 connectDB();
+mongoose.connect("mongodb+srv://Hang:hang@hang.qr6gp.mongodb.net/?retryWrites=true&w=majority")
 
 // parse request to body-parser
 app.use(bodyparser.urlencoded({ extended : true}))
